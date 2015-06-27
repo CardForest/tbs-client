@@ -33,6 +33,10 @@ angular.module('room', [])
     console.log('yeah ' + result);
   });
 
+  this.replay = function() {
+    this.session.init();
+  };
+
   this.members = [
     { name: 'Janet Perkins', img: 'img/100-0.jpeg', color: 'rgb(100, 100, 193)', icon: 'img/icons/ic_close_black_24px.svg', player: {
       idx: 0
@@ -176,7 +180,7 @@ angular.module('room', [])
       };
       scope.x = iAttrs.x;
       scope.y = iAttrs.y;
-      scope.$watch(`room.session.board[${iAttrs.x}][${iAttrs.y}]`, function(newValue, oldValue) {
+      scope.$watch(`room.session.board[${iAttrs.x}][${iAttrs.y}]`, function(newValue) {
         scope.mark = newValue;
         scope.markColor = markColors[newValue];
         scope.markIcon = markIcons[newValue];

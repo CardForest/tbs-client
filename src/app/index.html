@@ -14,7 +14,7 @@
     .path {
       stroke-dasharray: 392;
       stroke-dashoffset: 392;
-      animation: dash 0.5s ease-out forwards;
+      animation: dash 1s ease-out forwards;
     }
 
     @keyframes dash {
@@ -85,7 +85,7 @@
   <!--<div ng-include="'views/board1.html'"></div>-->
   <div ng-include="'views/board2.html'"></div>
   <!--ng-show="room.game.result"-->
-  <md-button class="animate-show" ng-click="room.game.replay()" ng-show="room.game.result"><md-icon md-svg-icon="img/icons/ic_replay_black_24px.svg"></md-icon></md-button>
+  <md-button class="animate-show" ng-click="room.replay()" ng-show="room.session.result"><md-icon md-svg-icon="img/icons/ic_replay_black_24px.svg"></md-icon></md-button>
 </md-content>
 <!--ng-include ng-controller="MainCtrl as main" src="main.html"></ng-include-->
 <script src="jspm_packages/system.js"></script>

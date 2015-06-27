@@ -1,6 +1,6 @@
 <span class="cell" layout layout-align="center center">
   <md-button class="md-icon-button" aria-label="cell" ng-click="room.session.markCell(x, y)"
-             ng-disabled="room.game.result || room.game.cellDisabled(0, 0)">
+             ng-disabled="room.session.result || !room.session.board[x][y].isEmpty()">
     <md-icon ng-style="{'color': markColor}" md-svg-icon="{{markIcon}}"></md-icon>
   </md-button>
 </span>
