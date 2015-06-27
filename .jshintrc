@@ -1,0 +1,14 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "undef": true,
+  "unused": true,
+  "browserify": true,
+  "esnext": true
+}
+

@@ -1,0 +1,98 @@
+<md-whiteframe class="md-whiteframe-z1" layout="column" layout-padding layout-align="center center">
+  <span layout="row">
+    <cell x="0" y="0"></cell>
+    <cell x="0" y="1" style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);"></cell>
+    <cell x="0" y="2"></cell>
+  </span>
+  <span layout="row">
+    <cell x="1" y="0" style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);"></cell>
+    <cell x="1" y="1" style="border: 1px solid rgb(208, 208, 208);"></cell>
+    <cell x="1" y="2" style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);"></cell>
+  </span>
+  <span layout="row">
+    <cell x="2" y="0"></cell>
+    <cell x="2" y="1" style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);"></cell>
+    <cell x="2" y="2"></cell>
+  </span>
+    <!--<span class="cell" layout layout-align="center center">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 0)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(0, 0)">-->
+        <!--{{room.session.board[0][0].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(0, 0)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(0, 0)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center"-->
+          <!--style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 1)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(0, 1)">-->
+        <!--{{room.session.board[0][1].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(0, 1)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(0, 1)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 2)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(0, 2)">-->
+        <!--{{room.session.board[0][2].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(0, 2)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(0, 2)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+  <!--</span>-->
+  <!--<span layout="row">-->
+    <!--<span class="cell" layout layout-align="center center"-->
+          <!--style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 0)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(1, 0)">-->
+        <!--{{room.session.board[1][0].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(1, 0)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(1, 0)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center" style="border: 1px solid rgb(208, 208, 208);">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 1)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(1, 1)">-->
+        <!--{{room.session.board[1][1].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(1, 1)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(1, 1)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center"-->
+          <!--style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 2)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(1, 2)">-->
+        <!--{{room.session.board[1][2].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(1, 2)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(1, 2)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+  <!--</span>-->
+  <!--<span layout="row">-->
+    <!--<span class="cell" layout layout-align="center center">-->
+      <!--<md-button class="md-icon-button cell" aria-label="More" ng-click="room.game.toggleCell(2, 0)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(2, 0)">-->
+        <!--{{room.session.board[2][0].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(2, 0)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(2, 0)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center"-->
+          <!--style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(2, 1)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(2, 1)">-->
+        <!--{{room.session.board[2][1].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(2, 1)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(2, 1)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+    <!--<span class="cell" layout layout-align="center center">-->
+      <!--<md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(2, 2)"-->
+                 <!--ng-disabled="room.game.result || room.game.cellDisabled(2, 2)">-->
+        <!--{{room.session.board[2][2].toString()}}-->
+        <!--&lt;!&ndash;<md-icon ng-style="{'color': room.game.cellToColor(2, 2)}"&ndash;&gt;-->
+                 <!--&lt;!&ndash;md-svg-icon="{{room.game.cellToIcon(2, 2)}}"></md-icon>&ndash;&gt;-->
+      <!--</md-button>-->
+    <!--</span>-->
+  <!--</span>-->
+</md-whiteframe>

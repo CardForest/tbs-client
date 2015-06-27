@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <style>
+    [ng-cloak] {
+      display: none !important;
+    }
+
+    .cell {
+      height: 60px;
+      width: 60px;
+    }
+    .path {
+      stroke-dasharray: 392;
+      stroke-dashoffset: 392;
+      animation: dash 0.5s ease-out forwards;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .animate-show {
+      height: 36px;
+      min-height: 36px;
+      opacity: 1;
+    }
+
+    .animate-show.ng-hide-add.ng-hide-add-active,
+    .animate-show.ng-hide-remove.ng-hide-remove-active {
+      -webkit-transition: all ease-out 0.3s;
+      transition: all ease-out  0.3s;
+    }
+
+    .animate-show.ng-hide {
+      opacity: 0;
+      height: 0;
+      min-height: 0;
+    }
+
+    .board {
+      -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+    }
+
+    .board.done {
+      opacity: 0;
+    }
+
+  </style>
+
+
+</head>
+<body ng-cloak ng-controller="RoomCtrl as room" layout="row" layout-fill>
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
+  <md-content>
+    <md-list>
+      <md-subheader class="md-no-sticky">Players</md-subheader>
+      <md-list-item layout="row" ng-repeat="member in room.members" ng-click="room.game.currentPlayer = member.player"
+                    ng-style="{'border-right': '2px solid ' + member.color}">
+
+        <img alt="{{ member.name }}" ng-src="{{ member.img }}" class="md-avatar"/>
+
+        <md-icon ng-show="room.game.currentPlayer === member.player"
+                 md-svg-icon="img/icons/ic_chevron_right_24px.svg"></md-icon>
+        <p>{{ member.name }}</p>
+
+        <md-icon ng-style="{'color': member.color}" md-svg-icon="{{member.icon}}"></md-icon>
+      </md-list-item>
+    </md-list>
+  </md-content>
+
+  <md-divider></md-divider>
+
+  <md-content>
+    <ng-include src="'views/debug-block.html'"></ng-include>
+  </md-content>
+
+</md-sidenav>
+
+<md-content layout-padding layout="column" layout-align="center center" flex
+            style="border-bottom: 4px solid {{room.members[1].color}}; border-top: 4px solid {{room.members[0].color}};">
+  <!--<div ng-include="'views/board1.html'"></div>-->
+  <div ng-include="'views/board2.html'"></div>
+  <!--ng-show="room.game.result"-->
+  <md-button class="animate-show" ng-click="room.game.replay()" ng-show="room.game.result"><md-icon md-svg-icon="img/icons/ic_replay_black_24px.svg"></md-icon></md-button>
+</md-content>
+<!--ng-include ng-controller="MainCtrl as main" src="main.html"></ng-include-->
+<script src="jspm_packages/system.js"></script>
+<script src="config.js"></script>
+<script>
+  System.import('js/bootstrap');
+</script>
+</body>
+</html>

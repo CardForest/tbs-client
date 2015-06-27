@@ -1,0 +1,130 @@
+<md-whiteframe class="md-whiteframe-z1 board" ng-class="{'done': room.game.result}" layout="column" layout-padding layout-align="center center">
+
+  <!-- columns -->
+  <svg ng-show="room.game.result.line === 'c0' && room.game.result.dir === 'up'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="34" y1="196" x2="34" y2="0"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'c0' && room.game.result.dir === 'down'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="34" y1="0" x2="34" y2="196"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+
+  <svg ng-show="room.game.result.line === 'c1' && room.game.result.dir === 'up'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="98" y1="196" x2="98" y2="0"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 60px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'c1' && room.game.result.dir === 'down'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="98" y1="0" x2="98" y2="196"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 60px"/>
+  </svg>
+
+  <svg  ng-show="room.game.result.line === 'c2' && room.game.result.dir === 'up'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="162" y1="196" x2="162" y2="0"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+  <svg  ng-show="room.game.result.line === 'c2' && room.game.result.dir === 'down'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="162" y1="0" x2="162" y2="196"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+
+  <!-- rows -->
+  <svg ng-show="room.game.result.line === 'r0' && room.game.result.dir === 'right'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="0" y1="34" x2="196" y2="34"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'r0' && room.game.result.dir === 'left'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="196" y1="34" x2="0" y2="34"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+
+  <svg ng-show="room.game.result.line === 'r1' && room.game.result.dir === 'right'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="0" y1="98" x2="196" y2="98"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 60px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'r1' && room.game.result.dir === 'left'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="196" y1="98" x2="0" y2="98"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 60px"/>
+  </svg>
+
+  <svg ng-show="room.game.result.line === 'r2' && room.game.result.dir === 'right'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="0" y1="162" x2="196" y2="162"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'r2' && room.game.result.dir === 'left'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="196" y1="162" x2="0" y2="162"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 69px"/>
+  </svg>
+
+  <svg ng-show="room.game.result.line === 'd0' && room.game.result.dir === 'up'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="196" y1="196" x2="0" y2="0"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 85px"/>
+  </svg>
+  <svg ng-show="room.game.result.line === 'd0' && room.game.result.dir === 'down'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="0" y1="0" x2="196" y2="196"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 85px"/>
+  </svg>
+
+
+  <svg  ng-show="room.game.result.line === 'd1' && room.game.result.dir === 'up'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="0" y1="196" x2="196" y2="0"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 85px"/>
+  </svg>
+  <svg  ng-show="room.game.result.line === 'd1' && room.game.result.dir === 'down'" style='position: absolute; margin: -8px 0 0 -8px; width: 196px; height: 196px;'>
+    <line class="path" x1="196" y1="0" x2="0" y2="196"
+          style="opacity: 0.3; stroke: {{room.game.result.color}}; stroke-width: 85px"/>
+  </svg>
+
+
+    <span layout="row">
+      <span class="cell" layout layout-align="center center">
+          <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 0)" ng-disabled="room.game.result || room.game.cellDisabled(0, 0)">
+            <md-icon ng-style="{'color': room.game.cellToColor(0, 0)}" md-svg-icon="{{room.game.cellToIcon(0, 0)}}"></md-icon>
+          </md-button>
+      </span>
+      <span class="cell" layout layout-align="center center" style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 1)" ng-disabled="room.game.result || room.game.cellDisabled(0, 1)">
+        <md-icon ng-style="{'color': room.game.cellToColor(0, 1)}" md-svg-icon="{{room.game.cellToIcon(0, 1)}}"></md-icon>
+      </md-button>
+        </span>
+        <span class="cell" layout layout-align="center center">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(0, 2)" ng-disabled="room.game.result || room.game.cellDisabled(0, 2)">
+        <md-icon ng-style="{'color': room.game.cellToColor(0, 2)}" md-svg-icon="{{room.game.cellToIcon(0, 2)}}"></md-icon>
+      </md-button>
+          </span>
+    </span>
+        <span layout="row">
+          <span class="cell" layout layout-align="center center" style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 0)" ng-disabled="room.game.result || room.game.cellDisabled(1, 0)">
+        <md-icon ng-style="{'color': room.game.cellToColor(1, 0)}" md-svg-icon="{{room.game.cellToIcon(1, 0)}}"></md-icon>
+      </md-button>
+            </span>
+            <span class="cell" layout layout-align="center center" style="border: 1px solid rgb(208, 208, 208);">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 1)" ng-disabled="room.game.result || room.game.cellDisabled(1, 1)">
+        <md-icon ng-style="{'color': room.game.cellToColor(1, 1)}" md-svg-icon="{{room.game.cellToIcon(1, 1)}}"></md-icon>
+      </md-button>
+              </span>
+              <span class="cell" layout layout-align="center center" style="border-style: solid; border-width: 1px 0; border-color: rgb(208, 208, 208);">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(1, 2)" ng-disabled="room.game.result || room.game.cellDisabled(1, 2)">
+        <md-icon ng-style="{'color': room.game.cellToColor(1, 2)}" md-svg-icon="{{room.game.cellToIcon(1, 2)}}"></md-icon>
+      </md-button>
+                </span>
+    </span>
+        <span layout="row">
+          <span class="cell" layout layout-align="center center">
+      <md-button class="md-icon-button cell" aria-label="More" ng-click="room.game.toggleCell(2, 0)" ng-disabled="room.game.result || room.game.cellDisabled(2, 0)">
+        <md-icon ng-style="{'color': room.game.cellToColor(2, 0)}" md-svg-icon="{{room.game.cellToIcon(2, 0)}}"></md-icon>
+      </md-button>
+            </span>
+            <span class="cell" layout layout-align="center center" style="border-style: solid; border-width: 0 1px; border-color: rgb(208, 208, 208);">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(2, 1)" ng-disabled="room.game.result || room.game.cellDisabled(2, 1)">
+        <md-icon ng-style="{'color': room.game.cellToColor(2, 1)}" md-svg-icon="{{room.game.cellToIcon(2, 1)}}"></md-icon>
+      </md-button>
+              </span>
+              <span class="cell" layout layout-align="center center">
+      <md-button class="md-icon-button" aria-label="More" ng-click="room.game.toggleCell(2, 2)" ng-disabled="room.game.result || room.game.cellDisabled(2, 2)">
+        <md-icon ng-style="{'color': room.game.cellToColor(2, 2)}" md-svg-icon="{{room.game.cellToIcon(2, 2)}}"></md-icon>
+      </md-button>
+                </span>
+    </span>
+</md-whiteframe>
