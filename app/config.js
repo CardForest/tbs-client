@@ -22,6 +22,8 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.6.15",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
+    "lodash.throttle": "npm:lodash.throttle@3.0.4",
+    "socket.io-client": "github:Automattic/socket.io-client@1.3.5",
     "github:angular/bower-angular-animate@1.4.1": {
       "angular": "github:angular/bower-angular@1.4.1"
     },
@@ -47,6 +49,12 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:lodash.debounce@3.1.1": {
+      "lodash._getnative": "npm:lodash._getnative@3.9.1"
+    },
+    "npm:lodash.throttle@3.0.4": {
+      "lodash.debounce": "npm:lodash.debounce@3.1.1"
     }
   }
 });
