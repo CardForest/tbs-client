@@ -32,7 +32,7 @@ if (live) {
       online: false,
       port: 9000,
       server: {
-        baseDir: ['jspm', 'ui-demo', 'src/app']
+        baseDir: ['app']
       }
     }, cb);
 

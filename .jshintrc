@@ -8,7 +8,6 @@
   "noarg": true,
   "undef": true,
   "unused": true,
-  "browserify": true,
   "esnext": true
 }
 
