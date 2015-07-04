@@ -1,0 +1,14 @@
+{
+  "name": "tbs-server",
+  "private": true,
+  "license": "AGPL",
+  "engines": {
+    "node": "^0.12.6"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.13.0",
+    "request": "^2.58.0",
+    "socket.io": "^1.3.5"
+  }
+}

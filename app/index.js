@@ -27,7 +27,8 @@ angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.re
         controller: 'RoomController',
         controllerAs: 'room',
         resolve: {
-          session: 'g.tic-tac-toe.session'
+          session: 'g.tic-tac-toe.session',
+          gameFactory: 'g.tic-tac-toe.gameFactory'
         }
       });
 });

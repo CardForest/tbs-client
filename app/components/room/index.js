@@ -1,12 +1,10 @@
 import angular from 'angular';
 
-angular.module('tbs.room', ['tbs.realtime'])
-  .controller('RoomController', function ($routeParams, $scope, rt, session) {
+angular.module('tbs.room', [])
+  .controller('RoomController', function ($routeParams, $scope, session, gameFactory) {
     this.id = $routeParams.roomId;
     $scope.session = session;
     this.status = 'no hope';
-    rt.connect($scope)
-      .on('test', (msg) => {
-        this.status = 'yes! got ' + msg;
-      });
+
+    $scope.game = gameFactory($scope);
   });

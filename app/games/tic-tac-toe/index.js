@@ -16,7 +16,29 @@ let markIcons = {
     [Cell.O]: 'games/tic-tac-toe/O.svg'
 };
 
-angular.module('g.tic-tac-toe', [])
+angular.module('g.tic-tac-toe', ['tbs.realtime'])
+    .factory('g.tic-tac-toe.gameFactory', function (rt) {
+      return function (scope) {
+        const game = {
+          markCell(x, y) {
+            return rt.emit('markCell', {x, y});
+          },
+          init() {
+            return rt.emit('init');
+          }
+        };
+        rt.connect(scope)
+          .on('update', (msg) => {
+            game.board = msg.board;
+            game.result = msg.result;
+            game.currentPlayer = msg.currentPlayer;
+          });
+
+        game.init();
+
+        return game;
+      };
+    })
     .factory('g.tic-tac-toe.session', function () {
         const human = {
             init(session, mark, next){

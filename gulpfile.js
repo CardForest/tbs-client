@@ -45,8 +45,8 @@ if (live) {
 
   gulp.task('nodemon', function (cb) {
     nodemon({
-      script: 'node_modules/tbs-server/temp.js',
-      watch: ['node_modules/tbs-server'], // FIXME open bug, see https://github.com/remy/nodemon/issues/4873
+      script: 'server/index.js',
+      watch: ['server'], // FIXME open bug when pointing to node_modules, see https://github.com/remy/nodemon/issues/4873
       ext: 'js',
       env: {
         NODE_ENV: prod ? 'production' : 'development',

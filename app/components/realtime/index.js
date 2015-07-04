@@ -40,7 +40,7 @@ angular.module('tbs.realtime', [])
         });
 
         return {
-          on(eventId, cb, invokeApply = true) {
+          on(msgType, cb, invokeApply = true) {
             if (invokeApply) {
               const originalCb = cb;
               cb = function () {
@@ -51,19 +51,19 @@ angular.module('tbs.realtime', [])
               };
             }
 
-            socket.on(eventId, cb);
+            socket.on(msgType, cb);
             scope.$on('$destroy', function () {
-              socket.removeListener(eventId, cb);
+              socket.removeListener(msgType, cb);
             });
 
             return this;
           }
         };
       },
-      emit(eventId, msg, returnPromise = true) {
+      emit(msgType, msg, returnPromise = true) {
         if (returnPromise) {
           return $q(function (resolve, reject) {
-            socket.emit(eventId, msg, function (err, ack) {
+            socket.emit(msgType, msg, function (err, ack) {
               if (err != null) {
                 reject(err);
               } else {
@@ -72,7 +72,7 @@ angular.module('tbs.realtime', [])
             });
           });
         } else {
-          socket.emit(eventId, msg);
+          socket.emit(msgType, msg);
         }
       }
     };
