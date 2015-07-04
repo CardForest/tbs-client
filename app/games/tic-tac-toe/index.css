@@ -1,0 +1,27 @@
+.cell {
+    border-color: rgb(208, 208, 208);
+    height: 60px;
+    width: 60px;
+}
+
+.path {
+    stroke-dasharray: 392;
+    stroke-dashoffset: 392;
+    animation: dash 1s ease-out forwards;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.stat {
+    -webkit-transition:opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.18s;
+    transition:opacity cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.18s;
+    opacity: 1;
+}
+
+.stat.fade {
+    opacity: 0.4;
+}

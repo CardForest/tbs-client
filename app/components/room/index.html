@@ -1,2 +1,15 @@
-room id {{room.id}}
-<button ng-click="room.connect()">connect</button>
+<md-content layout-padding layout="column" layout-align="center center" flex
+            style="border-bottom: 4px solid {{session.XColor}}; border-top: 4px solid {{session.OColor}};">
+  <md-whiteframe class="md-whiteframe-z1 board" ng-class="{'done': session.result}" layout="column" layout-padding layout-align="center center">
+    <div ng-include="session.templateUrl"></div>
+  </md-whiteframe>
+  <md-button class="animate-show" ng-click="session.init()" ng-show="session.result">
+    <md-icon md-svg-icon="replay.svg"></md-icon>
+  </md-button>
+  <div class="md-display-1" style="position: absolute; bottom: 20px; right: 20px" ng-style="{color: session.XColor}">
+    <span fade-stat-change="0">{{playerStat}}</span>
+  </div>
+  <div class="md-display-1" style="position: absolute; top: 20px; right: 20px;" ng-style="{color: session.OColor}">
+    <span fade-stat-change="1">{{playerStat}}</span>
+  </div>
+</md-content>

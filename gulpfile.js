@@ -24,17 +24,37 @@ global.distDir = prod ? 'dist/prod' : 'dist/dev';
 if (live) {
   global.sync = require('browser-sync').create();
 
-  gulp.task('default', function (cb) {
+  gulp.task('default', ['nodemon'], function (cb) {
     sync.init({
       ghostMode: false,
       open: false,
       notify: false,
       online: false,
       port: 9000,
-      server: {
-        baseDir: ['app']
-      }
+
+      proxy: "localhost:9001"
+      //// to run simple static server, use:
+      //server: {
+      //  baseDir: ['app']
+      //}
     }, cb);
 
+  });
+
+  var nodemon = require('nodemon');
+
+  gulp.task('nodemon', function (cb) {
+    nodemon({
+      script: 'node_modules/tbs-server/temp.js',
+      watch: ['node_modules/tbs-server'], // FIXME open bug, see https://github.com/remy/nodemon/issues/4873
+      ext: 'js',
+      env: {
+        NODE_ENV: prod ? 'production' : 'development',
+        APP_DIR: 'app',
+        PORT: 9001,
+        LIVE: live, //(always true)
+        LIVE_PORT: 9000
+      }
+    }).once('start', cb);
   });
 }
