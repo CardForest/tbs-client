@@ -13,6 +13,10 @@ export default class Board extends Array {
     return [for (x of countTo(3)) for (y of countTo(3)) if (this[x][y] === Cell.EMPTY) [x, y]];
   }
 
+  serialize() {
+    return [for (row of this) [for (cell of row) {key: cell.key}]];
+  }
+
   clone() {
     return new Board([for (row of this) [for (cell of row) cell]]);
   }
@@ -20,4 +24,6 @@ export default class Board extends Array {
   toString() {
     return [for (row of this) `\t${row.join(' ')}`].join('\n');
   }
+
+
 }

@@ -1,10 +1,9 @@
 import angular from 'angular';
 
 angular.module('tbs.room', [])
-  .controller('RoomController', function ($routeParams, $scope, session, gameFactory) {
+  .controller('RoomController', function ($routeParams, $scope, session, gameFactory, $log) {
     this.id = $routeParams.roomId;
-    $scope.session = session;
-    this.status = 'no hope';
-
-    $scope.game = gameFactory($scope);
+    $log.error(session);
+  //  $scope.session = session;
+    $scope.session = gameFactory($scope);
   });

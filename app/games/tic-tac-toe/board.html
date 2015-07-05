@@ -73,5 +73,5 @@
 </svg>
 
 <span ng-repeat="row in session.board track by $index" ng-init="rowIndex = $index" layout="row">
-    <cell ng-repeat="col in row track by $index" x="{{rowIndex}}" y="{{$index}}"></cell>
+  <cell ng-repeat="col in row track by $index" x="{{rowIndex}}" y="{{$index}}"></cell>
 </span>

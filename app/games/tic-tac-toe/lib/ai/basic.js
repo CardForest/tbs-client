@@ -19,6 +19,10 @@ export class BasicAi {
     this.next = next;
   }
 
+  serialize() {
+    return {mark: this.mark.key};
+  }
+
   makeMove() {
     const moves = this.session.board.getEmptyCells().map((cell) => {
       const board = this.session.board.clone();

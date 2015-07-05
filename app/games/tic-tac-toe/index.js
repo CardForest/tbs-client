@@ -6,18 +6,18 @@ import Session from './lib/session';
 import Cell from './lib/cell';
 
 let markColors = {
-    [Cell.EMPTY]: null,
-    [Cell.X]: 'rgb(100, 100, 193)',
-    [Cell.O]: 'rgb(234, 123, 123)'
+    '_': null,
+    'X': 'rgb(100, 100, 193)',
+    'O': 'rgb(234, 123, 123)'
 };
 let markIcons = {
-    [Cell.EMPTY]: null,
-    [Cell.X]: 'games/tic-tac-toe/X.svg',
-    [Cell.O]: 'games/tic-tac-toe/O.svg'
+    '_': null,
+    'X': 'games/tic-tac-toe/X.svg',
+    'O': 'games/tic-tac-toe/O.svg'
 };
 
 angular.module('g.tic-tac-toe', ['tbs.realtime'])
-    .factory('g.tic-tac-toe.gameFactory', function (rt) {
+    .factory('g.tic-tac-toe.gameFactory', function (rt, $log) {
       return function (scope) {
         const game = {
           markCell(x, y) {
@@ -32,9 +32,18 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
             game.board = msg.board;
             game.result = msg.result;
             game.currentPlayer = msg.currentPlayer;
+            game.stat = msg.stat;
+
+            //TODO this
+            $log.error(game);
           });
 
-        game.init();
+        rt.emit('updateRequest');
+
+        game.stat = [0, 0];
+        game.XColor = markColors['X'];
+        game.OColor = markColors['O'];
+        game.templateUrl = 'games/tic-tac-toe/board.html';
 
         return game;
       };
@@ -58,8 +67,8 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
             console.log('Game Ended with ' + result);
         });
         session.stat = [0, 0];
-        session.XColor = markColors[Cell.X];
-        session.OColor = markColors[Cell.O];
+        session.XColor = markColors[Cell.X.key];
+        session.OColor = markColors[Cell.O.key];
         session.templateUrl = 'games/tic-tac-toe/board.html';
 
         return session
@@ -106,9 +115,9 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
                 }
 
                 scope.$watch(`session.board[${iAttrs.x}][${iAttrs.y}]`, function(newValue) {
-                    scope.mark = newValue;
-                    scope.markColor = markColors[newValue];
-                    scope.markIcon = markIcons[newValue];
+                    //scope.mark = newValue;
+                    scope.markColor = markColors[newValue.key];
+                    scope.markIcon = markIcons[newValue.key];
                 });
             }
         };
