@@ -1,0 +1,5 @@
+{
+  "robots": {
+    "disallow": "/jspm_packages/"
+  }
+}
