@@ -1,4 +1,6 @@
-import * as middleware from './';
+import requireDir from 'require-dir';
+
+const middleware = requireDir('./middleware');
 
 export default function middlewareBuilder(app) {
   const _middlewareBuilder = {};

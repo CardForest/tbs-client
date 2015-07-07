@@ -1,4 +1,4 @@
-export function handleErrors(app) {
+export default function handleErrors(app) {
   // TODO narrow down 404 error and provide redirect to '/' when it makes sense
 
   // catch 404

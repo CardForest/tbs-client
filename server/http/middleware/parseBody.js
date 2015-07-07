@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser';
 
-export function parseBody(app){
+export default function parseBody(app){
   app.use(bodyParser.json());
 }

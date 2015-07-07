@@ -17,7 +17,7 @@ export default {
   },
   log: log,
   httpLogStream: split().on('data', function (message) {
-    log.verbose(message);
+    log.silly(message);
   }),
   paths: {
     client: __dirname + '/../../app'

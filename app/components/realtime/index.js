@@ -4,9 +4,9 @@ import ioClientFactory from 'socket.io-client';
 angular.module('tbs.realtime', [])
   .factory('rt', function ($log, $q, $window, $location) {
     const rtPort = $location.search().rtPort;
-    const rtAddress = (rtPort == null && /^\d{2,4}$/.test(rtPort)) ?
-                        $window.location.host :
-                        $window.location.hostname + ':' + rtPort;
+    const rtAddress = (rtPort != null && /^\d{2,4}$/.test(rtPort)) ?
+                        $window.location.hostname + ':' + rtPort:
+                        $window.location.host;
     const socket = ioClientFactory(rtAddress, {
       transports: ['websocket']
     });
