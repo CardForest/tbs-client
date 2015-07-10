@@ -25,10 +25,14 @@ angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.re
       .when('/room/:roomId', {
         templateUrl: 'components/room/index.html',
         controller: 'RoomController',
-        controllerAs: 'room',
+        //controllerAs: 'room',
         resolve: {
-          session: 'g.tic-tac-toe.session',
-          gameFactory: 'g.tic-tac-toe.gameFactory'
+          game: 'g.tic-tac-toe.game'
+          //session: 'g.tic-tac-toe.session',
+          //gameFactory: 'g.tic-tac-toe.gameFactory',
+          //newRoom: function(rt, $route) {
+          //  return {status: 'waiting for a second player'};//rt.emit('joinRoom', $route.current.params.roomId);
+          //}
         }
       });
 });

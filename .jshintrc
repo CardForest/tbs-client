@@ -8,6 +8,7 @@
   "noarg": true,
   "undef": true,
   "unused": true,
-  "esnext": true
+  "esnext": true,
+  "devel": true
 }
 

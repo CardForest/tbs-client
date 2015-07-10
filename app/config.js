@@ -16,9 +16,9 @@ System.config({
 
 System.config({
   "map": {
-    "angular": "github:angular/bower-angular@1.4.1",
+    "angular": "github:angular/bower-angular@1.4.2",
     "angular-material": "github:angular/bower-material@0.10.0",
-    "angular-route": "github:angular/bower-angular-route@1.4.1",
+    "angular-route": "github:angular/bower-angular-route@1.4.2",
     "babel": "npm:babel-core@5.6.15",
     "babel-runtime": "npm:babel-runtime@5.6.15",
     "core-js": "npm:core-js@0.9.18",
@@ -26,18 +26,27 @@ System.config({
     "lodash.throttle": "npm:lodash.throttle@3.0.4",
     "socket.io-client": "github:Automattic/socket.io-client@1.3.5",
     "github:angular/bower-angular-animate@1.4.1": {
-      "angular": "github:angular/bower-angular@1.4.1"
+      "angular": "github:angular/bower-angular@1.4.2"
+    },
+    "github:angular/bower-angular-animate@1.4.2": {
+      "angular": "github:angular/bower-angular@1.4.2"
     },
     "github:angular/bower-angular-aria@1.4.1": {
-      "angular": "github:angular/bower-angular@1.4.1"
+      "angular": "github:angular/bower-angular@1.4.2"
+    },
+    "github:angular/bower-angular-aria@1.4.2": {
+      "angular": "github:angular/bower-angular@1.4.2"
     },
     "github:angular/bower-angular-route@1.4.1": {
-      "angular": "github:angular/bower-angular@1.4.1"
+      "angular": "github:angular/bower-angular@1.4.2"
+    },
+    "github:angular/bower-angular-route@1.4.2": {
+      "angular": "github:angular/bower-angular@1.4.2"
     },
     "github:angular/bower-material@0.10.0": {
-      "angular": "github:angular/bower-angular@1.4.1",
-      "angular-animate": "github:angular/bower-angular-animate@1.4.1",
-      "angular-aria": "github:angular/bower-angular-aria@1.4.1",
+      "angular": "github:angular/bower-angular@1.4.2",
+      "angular-animate": "github:angular/bower-angular-animate@1.4.2",
+      "angular-aria": "github:angular/bower-angular-aria@1.4.2",
       "css": "github:systemjs/plugin-css@0.1.13"
     },
     "github:jspm/nodelibs-process@0.1.1": {

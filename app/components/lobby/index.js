@@ -1,8 +1,12 @@
 import angular from 'angular';
 
 angular.module('tbs.lobby', [])
-.controller('LobbyController', function($scope, rt) {
+.controller('LobbyController', function($scope, $location, $mdDialog, $document, rt) {
   rt.connect($scope);
 
-    rt.emit('welcome', {test: 1}).then(function (x) {console.log(x)}, function (x) {console.error(x)});
+  this.createRoom = function () {
+    rt.emit('createRoom').then(function (roomId) {
+      $location.path(`room/${roomId}`);
+    });
+  };
 });

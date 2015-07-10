@@ -3,15 +3,17 @@ import ioFactory from 'socket.io';
 import MsgHandlerBuilder from './msgHandlerBuilder';
 
 export default function realtime(http) {
-  const realtime = ioFactory(http, {"transports": ["websocket"]});
-
   const msgHandler = new MsgHandlerBuilder()
-                          .welcome()
+                          .createRoom()
+                          .joinRoom()
+                          .markCell()
+                          .ready()
                         .build();
 
-  realtime.on('connection', function(socket) {
-    msgHandler(socket)
-  });
+  ioFactory(http, {"transports": ["websocket"]})
+    .on('connection', function(socket) {
+      msgHandler(socket);
+    });
 
   return http;
 }

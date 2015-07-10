@@ -48,30 +48,35 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
         return game;
       };
     })
-    .factory('g.tic-tac-toe.session', function () {
-        const human = {
-            init(session, mark, next){
-                this.session = session;
-                this.mark = mark;
-                this.next=next;
-            },
-            makeMove(){
-                console.log('Human turn to make a move');
-            }
-        };
+    .factory('g.tic-tac-toe.game', function () {
+      return {
+        xColor: markColors[Cell.X.key],
+        oColor: markColors[Cell.O.key],
+        templateUrl: 'games/tic-tac-toe/board.html'
+      };
+        //const human = {
+        //    init(session, mark, next){
+        //        this.session = session;
+        //        this.mark = mark;
+        //        this.next=next;
+        //    },
+        //    makeMove(){
+        //        console.log('Human turn to make a move');
+        //    }
+        //};
+        //
+        //let session = new Session(human, new BasicAi(), function (result) {
+        //    if (result !== 'tie') {
+        //      session.stat[session.currentPlayer === human ? 0 : 1]++;
+        //    }
+        //    console.log('Game Ended with ' + result);
+        //});
+        //session.stat = [0, 0];
+        //session.XColor = markColors[Cell.X.key];
+        //session.OColor = markColors[Cell.O.key];
+        //session.templateUrl = 'games/tic-tac-toe/board.html';
 
-        let session = new Session(human, new BasicAi(), function (result) {
-            if (result !== 'tie') {
-              session.stat[session.currentPlayer === human ? 0 : 1]++;
-            }
-            console.log('Game Ended with ' + result);
-        });
-        session.stat = [0, 0];
-        session.XColor = markColors[Cell.X.key];
-        session.OColor = markColors[Cell.O.key];
-        session.templateUrl = 'games/tic-tac-toe/board.html';
-
-        return session
+        //return session
     })
     .directive('fadeStatChange', function($animate) {
         return {
@@ -79,15 +84,25 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
             scope: true,
             link: function (scope, iElement, iAttrs) {
                 iElement.addClass('stat');
-                const idx = iAttrs.fadeStatChange;
+                let idx = null;
+                scope.$watch('ownMark', function (ownMark) {
+                  if (iAttrs.fadeStatChange === 'own') {
+                    idx = (ownMark === 'X') ? 0 : 1;
+                  } else {
+                    idx = (ownMark === 'X') ? 1 : 0;
+                  }
+                });
+
                 scope.$watchCollection('session.stat', function (stat) {
-                    if (stat[idx] !== 0 && stat[idx] !== scope.playerStat) {
-                        $animate.addClass(iElement, 'fade').then(function() {
-                            scope.playerStat = stat[idx];
-                            $animate.removeClass(iElement, 'fade');
-                        });
-                    } else {
-                        scope.playerStat = stat[idx];
+                    if (stat != null) {
+                      if (stat[idx] !== 0 && stat[idx] !== scope.playerStat) {
+                          $animate.addClass(iElement, 'fade').then(function() {
+                              scope.playerStat = stat[idx];
+                              $animate.removeClass(iElement, 'fade');
+                          });
+                      } else {
+                          scope.playerStat = stat[idx];
+                      }
                     }
                 });
             }
