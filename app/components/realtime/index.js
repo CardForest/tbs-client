@@ -2,7 +2,7 @@ import angular from 'angular';
 import ioClientFactory from 'socket.io-client';
 
 angular.module('tbs.realtime', [])
-  .factory('rt', function ($log, $q, $window, $location) {
+  .factory('rt', ['$log', '$q', '$window', '$location', function ($log, $q, $window, $location) {
     const rtPort = $location.search().rtPort;
     const rtAddress = (rtPort != null && /^\d{2,4}$/.test(rtPort)) ?
                         $window.location.hostname + ':' + rtPort:
@@ -76,4 +76,4 @@ angular.module('tbs.realtime', [])
         }
       }
     };
-  });
+  }]);

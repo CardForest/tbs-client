@@ -13,7 +13,7 @@ require('winston/node_modules/colors').enabled = true; // workaround for https:/
 
 export default {
   robots: {
-    disallow: '/'
+    disallow: '/' // TODO "/jspm_packages/" in production
   },
   log: log,
   httpLogStream: split().on('data', function (message) {
@@ -23,5 +23,4 @@ export default {
     client: __dirname + '/../../app'
   },
   port: process.env.PORT || 9000
-
-}
+};

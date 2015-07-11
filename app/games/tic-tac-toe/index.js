@@ -78,7 +78,7 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
 
         //return session
     })
-    .directive('fadeStatChange', function($animate) {
+    .directive('fadeStatChange', ['$animate', function($animate) {
         return {
             restrict: 'A',
             scope: true,
@@ -107,7 +107,7 @@ angular.module('g.tic-tac-toe', ['tbs.realtime'])
                 });
             }
         };
-    })
+    }])
     .directive('cell', function() {
         return {
             scope: true,

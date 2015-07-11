@@ -12,7 +12,7 @@ export default function handleErrors(app) {
 
   // debug mode error handling
   // TODO separate to debug and production error handling
-  var errorHandler = require('errorHandler');
+  var errorHandler = require('errorhandler');
   errorHandler.title = 'TBS';
   app.use(errorHandler());
 }

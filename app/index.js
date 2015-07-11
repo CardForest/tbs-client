@@ -15,7 +15,7 @@ import './games/tic-tac-toe/index';
 import throttle from 'lodash.throttle';
 
 angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.realtime', 'g.tic-tac-toe'])
-.config(function ($routeProvider) {
+.config(['$routeProvider' ,function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'components/lobby/index.html',
@@ -35,8 +35,8 @@ angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.re
           //}
         }
       });
-});
+}]);
 
 angular.element(document).ready(function () {
-    angular.bootstrap(document, ['tbs']);
+    angular.bootstrap(document, ['tbs'], {strictDi: true});
 });

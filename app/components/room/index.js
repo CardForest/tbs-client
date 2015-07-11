@@ -1,7 +1,8 @@
 import angular from 'angular';
 
 angular.module('tbs.room', [])
-  .controller('RoomController', function (/*, session, gameFactory, */game, $log, $routeParams, rt, $scope) {
+  .controller('RoomController', ['game', '$log', '$routeParams', 'rt', '$scope',
+                                function (game, $log, $routeParams, rt, $scope) {
     $scope.game = game;
 
     rt
@@ -41,8 +42,8 @@ angular.module('tbs.room', [])
         };
       }
     });
-  })
-  .directive('gameView', function($mdDialog, $location) {
+  }])
+  .directive('gameView', ['$mdDialog', '$location', function($mdDialog, $location) {
     return {
       restrict: 'A',
       link: function(scope, element) {
@@ -64,9 +65,9 @@ angular.module('tbs.room', [])
                 locals: {
                   address: $location.absUrl()
                 },
-                controller: function ($scope, address) {
+                controller: ['$scope', 'address', function ($scope, address) {
                   $scope.address = address;
-                }
+                }]
               });
           } else if (newVal === 'started') {
             $mdDialog.hide();
@@ -83,4 +84,4 @@ angular.module('tbs.room', [])
 
       }
     };
-  });
+  }]);
