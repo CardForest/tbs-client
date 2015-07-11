@@ -4,8 +4,8 @@
   "license": "AGPL",
   "scripts": {
     "bundle": "jspm bundle-sfx index app/app.min.js --minify",
-    "start": "cd server && node bin/start.js",
-    "postinstall": "cd server && npm i"
+    "postinstall": "cd server && npm i",
+    "start": "cd server && node bin/start.js"
   },
   "engines": {
     "node": "^0.12.7"
