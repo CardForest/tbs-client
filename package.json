@@ -33,7 +33,8 @@
       "clean-css": "npm:clean-css@^3.3.5",
       "css": "github:systemjs/plugin-css@^0.1.13",
       "lodash.throttle": "npm:lodash.throttle@^3.0.4",
-      "socket.io-client": "github:Automattic/socket.io-client@^1.3.5"
+      "socket.io-client": "github:Automattic/socket.io-client@^1.3.5",
+      "zeroclipboard": "github:zeroclipboard/zeroclipboard@^2.2.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",

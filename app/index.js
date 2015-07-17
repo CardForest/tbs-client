@@ -15,7 +15,7 @@ import './games/tic-tac-toe/index';
 import throttle from 'lodash.throttle';
 
 angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.realtime', 'g.tic-tac-toe'])
-.config(['$routeProvider' ,function ($routeProvider) {
+.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'components/lobby/index.html',

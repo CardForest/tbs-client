@@ -9,14 +9,15 @@
   </style>
 </head>
 <body layout layout-fill>
+
   <ng-view layout layout-fill></ng-view>
 
-  <script src="app.min.js"></script>
+  <!--<script src="app.min.js"></script>-->
 
-  <!--<script src="jspm_packages/system.js"></script>-->
-  <!--<script src="config.js"></script>-->
-  <!--<script>-->
-    <!--System.import('index');-->
-  <!--</script>-->
+  <script src="jspm_packages/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    System.import('index');
+  </script>
 </body>
 </html>

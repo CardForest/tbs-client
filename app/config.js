@@ -26,19 +26,11 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.13",
     "lodash.throttle": "npm:lodash.throttle@3.0.4",
     "socket.io-client": "github:Automattic/socket.io-client@1.3.5",
-    "github:angular/bower-angular-animate@1.4.1": {
-      "angular": "github:angular/bower-angular@1.4.2"
-    },
+    "zeroclipboard": "github:zeroclipboard/zeroclipboard@2.2.0",
     "github:angular/bower-angular-animate@1.4.2": {
       "angular": "github:angular/bower-angular@1.4.2"
     },
-    "github:angular/bower-angular-aria@1.4.1": {
-      "angular": "github:angular/bower-angular@1.4.2"
-    },
     "github:angular/bower-angular-aria@1.4.2": {
-      "angular": "github:angular/bower-angular@1.4.2"
-    },
-    "github:angular/bower-angular-route@1.4.1": {
       "angular": "github:angular/bower-angular@1.4.2"
     },
     "github:angular/bower-angular-route@1.4.2": {
