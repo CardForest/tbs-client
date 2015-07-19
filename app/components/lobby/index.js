@@ -10,4 +10,8 @@ angular.module('tbs.lobby', [])
       $location.path(`room/${roomId}`);
     });
   };
+
+  this.fourInALine = function () {
+    $location.path('fourInALine');
+  }
 }]);

@@ -1,0 +1,40 @@
+<md-content layout-padding layout="column" layout-align="center center" flex>
+  <md-content layout="row">
+  <md-select placeholder="COL1" ng-model="COL1">
+    <md-option ng-repeat="col1 in colVals track by $index" value="{{col1}}">{{col1}}</md-option>
+  </md-select>
+  <md-select placeholder="ROW1" ng-model="ROW1">
+    <md-option ng-repeat="row1 in rowVals track by $index" value="{{row1}}">{{row1}}</md-option>
+  </md-select>
+  <md-select placeholder="COL2" ng-model="COL2">
+    <md-option ng-repeat="col2 in colVals track by $index" value="{{col2}}">{{col2}}</md-option>
+  </md-select>
+  <md-select placeholder="ROW2" ng-model="ROW2">
+    <md-option ng-repeat="row2 in rowVals track by $index" value="{{row2}}">{{row2}}</md-option>
+  </md-select>
+  <md-select placeholder="C" ng-model="C">
+    <md-option ng-repeat="c in Cvals track by $index" value="{{c}}">{{c}}</md-option>
+  </md-select>
+    <md-switch ng-model="S" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
+      show (md-warn): {{S}}
+    </md-switch>
+  </md-content>
+  <md-whiteframe style="position: relative;" class="md-whiteframe-z1" layout="row" layout-align="center center">
+    <svg ng-if="S === 'true'" class="path" style="position: absolute; left: 0; bottom: 0; width: 609px; height: 400px;">
+      <line x1="{{44 + 87*COL1}}" y1="{{32 + 67*ROW1}}" x2="{{44 + 87*COL2}}" y2="{{32 + 67*ROW2}}"
+            style="stroke: {{C}}; stroke-width: 2px"/>
+    </svg>
+    <svg ng-if="S === 'true'" class="path" style="position: absolute; left: 0; bottom: 0; width: 609px; height: 400px;">
+      <line x1="{{44 + 87*COL2}}" y1="{{32 + 67*ROW2}}" x2="{{44 + 87*COL1}}" y2="{{32 + 67*ROW1}}"
+            style="stroke: {{C}}; stroke-width: 2px"/>
+    </svg>
+    <md-button class="column" ng-repeat="y in [0, 1, 2, 3, 4, 5, 6] track by $index" ng-click="session.markCol(y)" ng-disabled="session.board[0][y] !== '_'">
+      <div layout="column" layout-fill layout-align="space-around center">
+        <div class="cell" flex layout-fill layout layout-align="center center" ng-repeat="x in [0, 1, 2, 3, 4, 5] track by $index">
+          <md-icon class="cell-circle-fill" md-svg-icon="{{markToFill[session.board[x][y]]}}"></md-icon>
+          <md-icon class="cell-circle-fill" md-svg-icon="games/four-in-a-line/circle.svg"></md-icon>
+        </div>
+      </div>
+    </md-button>
+  </md-whiteframe>
+</md-content>

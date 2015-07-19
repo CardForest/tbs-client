@@ -10,11 +10,12 @@ import './components/room/index';
 import './components/realtime/index';
 
 import './games/tic-tac-toe/index';
+import './games/four-in-a-line/index';
 
 
 import throttle from 'lodash.throttle';
 
-angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.realtime', 'g.tic-tac-toe'])
+angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.realtime', 'g.tic-tac-toe', 'g.four-in-a-line'])
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -34,6 +35,11 @@ angular.module('tbs', ['ngMaterial', 'ngRoute', 'tbs.lobby', 'tbs.room', 'tbs.re
           //  return {status: 'waiting for a second player'};//rt.emit('joinRoom', $route.current.params.roomId);
           //}
         }
+      })
+      .when('/fourInALine', {
+        templateUrl: 'games/four-in-a-line/index.html',
+        controller: 'FourInALineController',
+        controllerAs: 'room'
       });
 }]);
 
