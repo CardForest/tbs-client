@@ -23,21 +23,17 @@
 .cell-circle-fill {
   height: 60px;
   width: 60px;
-  position:absolute;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0
 }
 
-.path {
+.path2 {
   stroke-dasharray: 600;
+}
+.path2.ng-enter {
   stroke-dashoffset: 600;
   animation: dash 1.5s ease-out forwards;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
 }
